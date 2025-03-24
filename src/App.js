@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components"
+import bg from "./img/bg.png"
+import { MainLayout } from "./styles/Layouts"
+import Orb from "./components/Orb/Orb"
+import Navigation from "./components/Navigation/Navigation"
+import { useMemo, useState } from "react"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [active, setActive] = useState(1)
+
+	const OrbMemo = useMemo(() => {
+		return <Orb />
+	}, [])
+
+	return (
+		<AppStyled bg={bg} className="App">
+			{OrbMemo}
+			<MainLayout>
+				<h1 id="app-title">Expense Tracker </h1>
+				<Navigation active={active} setActive={setActive} />
+			</MainLayout>
+		</AppStyled>
+	)
 }
 
-export default App;
+const AppStyled = styled.div`
+	height: 100vh;
+	background-image: url(${(props) => props.bg});
+	position: relative;
+`
+export default App
