@@ -47,7 +47,7 @@ function Form() {
 					onChange={handleInput("amount")}
 				/>
 			</div>
-			<div className="input-control">
+			<div className=" input-control">
 				<DatePicker
 					id="date"
 					placeholderText="Enter A Date"
@@ -58,7 +58,7 @@ function Form() {
 					}}
 				/>
 			</div>
-			<div className="selects Input-control">
+			<div className="selects input-control">
 				<select
 					required
 					value={category}
@@ -106,7 +106,6 @@ const FormStyled = styled.form`
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
-
 	input,
 	textarea,
 	select {
@@ -138,7 +137,6 @@ const FormStyled = styled.form`
 		justify-content: flex-end;
 		select {
 			color: rgba(34, 34, 96, 0.4);
-			width: 100%;
 
 			&:focus,
 			&:active {
