@@ -1,6 +1,16 @@
 import { createGlobalStyle } from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
+:root{
+    --primary-color: #222260;
+    --primary-color2: rgba(34, 34, 96, .6)
+    --primary-color3: rgba(34, 34, 96, .4)
+    --color-green: #42AD00;
+    --color-grey: #aaa;
+    --color-accent: #F56692
+    --color-delet: #FF0000
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -8,19 +18,9 @@ export const GlobalStyle = createGlobalStyle`
     list-style: none;
 }
 
-:root{
-    --primary-color: #222260;
-    --primary-color2: 'color: rbga(34, 34, 96, .6)'
-    --primary-color3: 'color: rbga(34, 34, 96, .4)'
-    --color-green: #42AD00;
-    --color-grey: #aaa;
-    --color-accent: #F56692
-    --color-delet: #FF0000
-}
-
 body{
   font-family: "Nunito", sans-serif;
-  font-size: clamp(1rem, 1.5vw, 1.2rem)
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
   overflow: hidden;
   color: rgb(34, 34, 96, .6);
 }

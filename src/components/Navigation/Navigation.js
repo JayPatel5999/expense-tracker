@@ -36,7 +36,7 @@ function Navigation({ active, setActive }) {
 
 const NavStyled = styled.nav`
 	padding: 2rem 1.5rem;
-	width: 374px;
+	width: 324px;
 	height: 95%;
 	background: rgba(252, 246, 249, 0.78);
 	border: 3px solid; #FFFFFF;
@@ -91,9 +91,9 @@ const NavStyled = styled.nav`
 		}
 	}
 	.active{
-		color: rgba(34,34,96,1);
+		color: rgba(34,34,96,1) !important;
 		i{
-			color: rgba(34,34,96,1);
+			color: rgba(34,34,96,1) !important;
 		}
 		&::before{
 			content: "";
