@@ -38,6 +38,7 @@ function Expenses() {
 									category={category}
 									indicatorColor={"#42AD00"}
 									deleteItem={deleteExpense}
+									type="expense"
 								/>
 							)
 						})}

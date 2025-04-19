@@ -51,7 +51,7 @@ function App() {
 }
 
 const AppStyled = styled.div`
-	height: 100vh;
+	height: 102vh;
 	background-image: url(${(props) => props.bg});
 	position: relative;
 
@@ -61,8 +61,8 @@ const AppStyled = styled.div`
 		flex-direction: column;
 		align-items: center;
 		gap: 2rem;
-		margin-top: 2rem; /* Changed from -0.4rem to 2rem */
-		padding-top: 1rem;
+		margin-top: -2rem;
+		padding-top: 4rem;
 		color: var(--primary-color);
 		z-index: 2;
 	}
@@ -73,15 +73,12 @@ const AppStyled = styled.div`
 		border: 3px solid #ffffff;
 		backdrop-filter: blur(4.5px);
 		border-radius: 32px;
-		overflow: auto;
-		overflow-x: hidden;
 		padding: 2rem;
 		margin-bottom: 1.5rem;
-		height: calc(80vh - 2rem); /* Adjusted from 85vh to 80vh */
+		height: calc(81vh - 1rem); /* Adjusted from 85vh to 80vh */
 		&::-webkit-scrollbar {
 			width: 0;
 		}
 	}
 `
 export default App
-
