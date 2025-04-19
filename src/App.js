@@ -54,12 +54,19 @@ const AppStyled = styled.div`
 	height: 100vh;
 	background-image: url(${(props) => props.bg});
 	position: relative;
+
 	#app-title {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		gap: 2rem;
+		margin-top: 2rem; /* Changed from -0.4rem to 2rem */
+		padding-top: 1rem;
+		color: var(--primary-color);
+		z-index: 2;
 	}
+
 	main {
 		flex: 1;
 		background: rgba(252, 246, 249, 0.78);
@@ -67,12 +74,14 @@ const AppStyled = styled.div`
 		backdrop-filter: blur(4.5px);
 		border-radius: 32px;
 		overflow: auto;
-		overflowx: hidden;
+		overflow-x: hidden;
 		padding: 2rem;
 		margin-bottom: 1.5rem;
+		height: calc(80vh - 2rem); /* Adjusted from 85vh to 80vh */
 		&::-webkit-scrollbar {
 			width: 0;
 		}
 	}
 `
 export default App
+

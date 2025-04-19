@@ -23,7 +23,7 @@ import {
 } from "../../utils/icons"
 import Button from "../Buttons/Button"
 
-function IncomeItem({
+function ExpenseItem({
 	id,
 	title,
 	amount,
@@ -80,7 +80,7 @@ function IncomeItem({
 		}
 	}
 	return (
-		<IncomeItemStyled indicator={indicatorColor}>
+		<ExpenseItemStyled indicator={indicatorColor}>
 			<div className="icon">
 				{type === "expense" ? expenseCatIcon() : categoryIcon()}
 			</div>
@@ -113,11 +113,11 @@ function IncomeItem({
 					</div>
 				</div>
 			</div>
-		</IncomeItemStyled>
+		</ExpenseItemStyled>
 	)
 }
 
-const IncomeItemStyled = styled.div`
+const ExpenseItemStyled = styled.div`
 	background: #fcf6f9;
 	border: 2px solid #ffffff;
 	box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
@@ -184,4 +184,4 @@ const IncomeItemStyled = styled.div`
 	}
 `
 
-export default IncomeItem
+export default ExpenseItem

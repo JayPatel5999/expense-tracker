@@ -5,6 +5,7 @@ export const MainLayout = styled.div`
 	height: 100%;
 	display: flex;
 	gap: 2rem;
+	flex: 1;
 `
 
 export const InnerLayout = styled.div`

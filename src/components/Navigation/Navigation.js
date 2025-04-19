@@ -36,8 +36,8 @@ function Navigation({ active, setActive }) {
 
 const NavStyled = styled.nav`
 	padding: 2rem 1.5rem;
-	width: 324px;
-	height: 95%;
+	width: 300px;
+	height: 80%;
 	background: rgba(252, 246, 249, 0.78);
 	border: 3px solid; #FFFFFF;
 	backdrop-filter: blur(4.5px);

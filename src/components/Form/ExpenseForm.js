@@ -6,8 +6,8 @@ import { useGlobalContext } from "../../context/globalContext"
 import Button from "../Buttons/Button"
 import { plus } from "../../utils/icons"
 
-function Form() {
-	const { addIncome, getIncome } = useGlobalContext()
+function ExpenseForm() {
+	const { addExpense, getExpenses } = useGlobalContext()
 	const [inputState, setInputState] = useState({
 		title: "",
 		amount: "",
@@ -24,8 +24,8 @@ function Form() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
-		addIncome(inputState)
-		getIncome()
+		addExpense(inputState)
+		getExpenses()
 		setInputState({
 			title: "",
 			amount: "",
@@ -36,13 +36,13 @@ function Form() {
 	}
 
 	return (
-		<FormStyled onSubmit={handleSubmit}>
+		<ExpenseFormStyled onSubmit={handleSubmit}>
 			<div className="input-control">
 				<input
 					type="text"
 					value={title}
 					name={"title"}
-					placeholder="Salary Title"
+					placeholder="Expense Title"
 					onChange={handleInput("title")}
 				/>
 			</div>
@@ -51,7 +51,7 @@ function Form() {
 					type="text"
 					value={amount}
 					name={"amount"}
-					placeholder="Salary Amount"
+					placeholder="Expense Amount"
 					onChange={handleInput("amount")}
 				/>
 			</div>
@@ -92,7 +92,7 @@ function Form() {
 					value={description}
 					name={"description"}
 					id="description"
-					placeholder="Salary Description"
+					placeholder="Expense Description"
 					cols="30"
 					rows="4 "
 					onChange={handleInput("description")}
@@ -100,7 +100,7 @@ function Form() {
 			</div>
 			<div className="submit-btn">
 				<Button
-					name={"Add Income"}
+					name={"Add Expense"}
 					icon={plus}
 					bPad={".8rem 1.6rem"}
 					bRadius={"30px"}
@@ -108,11 +108,11 @@ function Form() {
 					color={"#fff"}
 				/>
 			</div>
-		</FormStyled>
+		</ExpenseFormStyled>
 	)
 }
 
-const FormStyled = styled.form`
+const ExpenseFormStyled = styled.form`
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
@@ -172,4 +172,4 @@ const FormStyled = styled.form`
 	}
 `
 
-export default Form
+export default ExpenseForm

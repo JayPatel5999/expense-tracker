@@ -20,7 +20,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n\tpadding: 2rem;\n\theight: 100%;\n\tdisplay: flex;\n\tgap: 2rem;\n"]);
+  var data = _taggedTemplateLiteral(["\n\tpadding: 2rem;\n\theight: 100%;\n\tdisplay: flex;\n\tgap: 2rem;\n\tflex: 1;\n"]);
 
   _templateObject = function _templateObject() {
     return data;

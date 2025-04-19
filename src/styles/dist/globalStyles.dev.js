@@ -8,7 +8,7 @@ exports.GlobalStyle = void 0;
 var _styledComponents = require("styled-components");
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n:root{\n    --primary-color: #222260;\n    --primary-color2: rgba(34, 34, 96, .6)\n    --primary-color3: rgba(34, 34, 96, .4)\n    --color-green: #42AD00;\n    --color-grey: #aaa;\n    --color-accent: #F56692\n    --color-delet: #FF0000\n}\n\n// *{\n//     margin: 0;\n//     padding: 0;\n//     box-sizing: border-box;\n//     list-style: none;\n// }\n\nbody{\n  font-family: \"Nunito\", sans-serif;\n  font-size: clamp(1rem, 1.5vw, 1.2rem);\n  overflow: hidden;\n  color: rgb(34, 34, 96, .6);\n}\n\n"]);
+  var data = _taggedTemplateLiteral(["\n    :root{\n        --primary-color: #222260;\n        --primary-color2: rgba(34, 34, 96, .6);\n        --primary-color3: rgba(34, 34, 96, .4);\n        --color-green: #42AD00;\n        --color-grey: #aaa;\n        --color-accent: #F56692;\n        --color-delete: #FF0000;\n    }\n\n    body, h1, h2, h3, h4, h5, h6, p, span {\n        font-family: 'Nunito', sans-serif !important;\n    }\n\n    body {\n        font-size: clamp(1rem, 1.5vw, 1.2rem);\n        overflow: hidden;\n        color: rgba(34, 34, 96, .6);\n    }\n\n    h1, h2, h3, h4, h5, h6 {\n        color: var(--primary-color);\n    }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
