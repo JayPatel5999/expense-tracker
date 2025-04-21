@@ -51,9 +51,10 @@ function App() {
 }
 
 const AppStyled = styled.div`
-	height: 102vh;
+	height: 100vh;
 	background-image: url(${(props) => props.bg});
 	position: relative;
+	overflow: hidden;
 
 	#app-title {
 		position: relative;
@@ -64,21 +65,22 @@ const AppStyled = styled.div`
 		margin-top: -2rem;
 		padding-top: 4rem;
 		color: var(--primary-color);
-		z-index: 2;
 	}
 
 	main {
 		flex: 1;
 		background: rgba(252, 246, 249, 0.78);
-		border: 3px solid #ffffff;
+		border: 3px solid #FFFFFF;
 		backdrop-filter: blur(4.5px);
 		border-radius: 32px;
 		padding: 2rem;
-		margin-bottom: 1.5rem;
-		height: calc(81vh - 1rem); /* Adjusted from 85vh to 80vh */
-		&::-webkit-scrollbar {
-			width: 0;
-		}
+		margin: 1rem;
+		height: calc(80vh - 2rem);
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
 	}
 `
 export default App
+

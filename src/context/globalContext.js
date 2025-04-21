@@ -1,4 +1,4 @@
-import { useContext, createContext, useState } from "react"
+import { useContext, createContext, useState, useEffect } from "react"
 import axios from "axios"
 
 const BASE_URL = "http://localhost:5000/api/v1/"
@@ -10,8 +10,7 @@ export const GlobalProvider = ({ children }) => {
 	const [expenses, setExpenses] = useState([])
 	const [error, setError] = useState(null)
 
-// Income Functions
-
+	// Income Functions
 	const addIncome = async (income) => {
 		const response = await axios
 			.post(`${BASE_URL}add-income`, income)
@@ -19,13 +18,11 @@ export const GlobalProvider = ({ children }) => {
 				setError(err.response.data.message)
 			})
 		getIncome()
-		totalIncome()
 	}
 
 	const getIncome = async () => {
 		const response = await axios.get(`${BASE_URL}get-incomes`)
 		setIncomes(response.data)
-		console.log(response.data)
 	}
 
 	const deleteIncome = async (id) => {
@@ -35,17 +32,16 @@ export const GlobalProvider = ({ children }) => {
 				setError(err.response.data.message)
 			})
 		getIncome()
-		totalIncome()
 	}
 
 	const totalIncome = () => {
 		let totalIncome = 0
 		incomes.forEach((income) => {
-			totalIncome += income.amount
+			totalIncome = totalIncome + income.amount
 		})
 		return totalIncome
 	}
-	
+
 	// Expense Functions
 	const addExpense = async (expense) => {
 		const response = await axios
@@ -54,13 +50,11 @@ export const GlobalProvider = ({ children }) => {
 				setError(err.response.data.message)
 			})
 		getExpenses()
-		totalExpense()
 	}
 
 	const getExpenses = async () => {
 		const response = await axios.get(`${BASE_URL}get-expenses`)
 		setExpenses(response.data)
-		console.log(response.data)
 	}
 
 	const deleteExpense = async (id) => {
@@ -70,16 +64,37 @@ export const GlobalProvider = ({ children }) => {
 				setError(err.response.data.message)
 			})
 		getExpenses()
-		totalExpense()
 	}
 
 	const totalExpense = () => {
 		let totalExpense = 0
 		expenses.forEach((expense) => {
-			totalExpense += expense.amount
+			totalExpense = totalExpense + expense.amount
 		})
 		return totalExpense
 	}
+
+	//Total Final Amount
+	const totalBalance = () => {
+		return totalIncome() - totalExpense()
+	}
+
+	//Transaction Functions
+	const transactionHistory = () => {
+		const history = [...incomes, ...expenses]
+		history.sort((a, b) => {
+			return new Date(b.createdAt) - new Date(a.createdAt)
+		})
+
+		return history.slice(0, 3)
+	}
+
+	// Load data when component mounts
+	useEffect(() => {
+		getIncome()
+		getExpenses()
+	}, [])
+
 	return (
 		<GlobalContext.Provider
 			value={{
@@ -92,7 +107,10 @@ export const GlobalProvider = ({ children }) => {
 				getExpenses,
 				deleteExpense,
 				totalExpense,
+				totalBalance,
 				expenses,
+				transactionHistory,
+				error,
 			}}>
 			{children}
 		</GlobalContext.Provider>

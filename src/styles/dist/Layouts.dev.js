@@ -10,7 +10,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n\tpadding: 2rem 1.5rem;\n\twidth: 95%;\n"]);
+  var data = _taggedTemplateLiteral(["\n\tpadding: 0 1.5rem;\n\twidth: 95%;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -20,7 +20,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n\tpadding: 2rem;\n\theight: 100%;\n\tdisplay: flex;\n\tgap: 2rem;\n\tflex: 1;\n"]);
+  var data = _taggedTemplateLiteral(["\n\tpadding: 2rem;\n\tmargin-top: -1.5rem;\n\theight: 100%;\n\tdisplay: flex;\n\tgap: 2rem;\n\tflex: 1;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
