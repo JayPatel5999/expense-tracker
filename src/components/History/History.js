@@ -10,20 +10,22 @@ function History() {
 	return (
 		<HistoryStyled>
 			<h2>Recent Transactions</h2>
-			{history.map((item) => {
-				const { _id, title, amount, type } = item
-				return (
-					<div key={_id} className="history-item">
-						<p style={{ color: type === "expense" ? "red" : "green" }}>
-							{title}
-						</p>
-						<p style={{ color: type === "expense" ? "red" : "green" }}>
-							{type === "expense" ? `- ${amount}` : `+ ${amount}`}
-							&nbsp;{dollar}
-						</p>
-					</div>
-				)
-			})}
+			<div className="history-list">
+				{history.map((item) => {
+					const { _id, title, amount, type } = item
+					return (
+						<div key={_id} className="history-item">
+							<p style={{ color: type === "expense" ? "red" : "green" }}>
+								{title}
+							</p>
+							<p style={{ color: type === "expense" ? "red" : "green" }}>
+								{type === "expense" ? `- ${amount}` : `+ ${amount}`}
+								&nbsp;{dollar}
+							</p>
+						</div>
+					)
+				})}
+			</div>
 		</HistoryStyled>
 	)
 }
@@ -34,15 +36,26 @@ const HistoryStyled = styled.div`
 	gap: 1rem;
 	
 	h2 {
-		font-family: 'Nunito', sans-serif;
-		color: var(--primary-color);
+		margin: 1rem 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: #FCF6F9;
+		border: 2px solid #FFFFFF;
+		box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
+		border-radius: 20px;
+		padding: 1rem;
 		font-size: 1.5rem;
-		font-weight: 700;
-		margin-bottom: 1.5rem;
+	}
+
+	.history-list {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
 	}
 
 	.history-item {
-		background: white;
+		background: #FCF6F9;
 		border: 2px solid #FFFFFF;
 		box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
 		padding: 1rem;
@@ -52,9 +65,18 @@ const HistoryStyled = styled.div`
 		align-items: center;
 
 		p {
-			font-family: 'Nunito', sans-serif;
-			font-size: 1.1rem;
+			font-size: 1.2rem;
 			font-weight: 600;
+		}
+	}
+
+	@media (max-width: 1024px) {
+		width: 100%;
+		
+		.history-item {
+			flex-direction: column;
+			gap: 0.5rem;
+			text-align: center;
 		}
 	}
 `

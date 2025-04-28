@@ -116,6 +116,11 @@ const FormStyled = styled.form`
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
+	background: #fcf6f9;
+	border: 2px solid #ffffff;
+	box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
+	border-radius: 20px;
+	padding: 2rem;
 
 	input,
 	textarea,
@@ -124,13 +129,14 @@ const FormStyled = styled.form`
 		font-size: inherit;
 		outline: none;
 		border: none;
-		padding: 0.5rem 0.5rem;
+		padding: 0.5rem 1rem;
 		border-radius: 5px;
 		border: 2px solid #fff;
 		background: transparent;
 		resize: none;
 		box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
 		color: rgba(34, 34, 96, 0.9);
+		width: 100%;
 
 		&::placeholder {
 			color: rgba(34, 34, 96, 0.4);
@@ -144,16 +150,20 @@ const FormStyled = styled.form`
 		.react-datepicker-wrapper {
 			width: 100%;
 		}
-		textarea {
-			width: 100%;
-		}
 	}
 
 	.selects {
 		display: flex;
 		justify-content: flex-end;
+		gap: 1rem;
+
+		@media (max-width: 768px) {
+			flex-direction: column;
+		}
+
 		select {
 			color: rgba(34, 34, 96, 0.4);
+			width: 100%;
 
 			&:focus,
 			&:active {
@@ -165,9 +175,8 @@ const FormStyled = styled.form`
 	.submit-btn {
 		button {
 			box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-
 			&:hover {
-				background: #42ad00 !important;
+				background: var(--color-green) !important;
 			}
 		}
 	}

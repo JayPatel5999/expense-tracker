@@ -106,12 +106,19 @@ const ChartStyled = styled.div`
 	box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
 	padding: 1rem;
 	border-radius: 20px;
-	height: 400px;
+	height: 100%;
+	min-height: 300px;
+	max-height: 350px;
 	width: 100%;
 
 	canvas {
 		width: 100% !important;
 		height: 100% !important;
+	}
+
+	@media (max-width: 1024px) {
+		min-height: 250px;
+		max-height: 300px;
 	}
 `
 

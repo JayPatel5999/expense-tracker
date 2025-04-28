@@ -70,7 +70,7 @@ const AppStyled = styled.div`
 	main {
 		flex: 1;
 		background: rgba(252, 246, 249, 0.78);
-		border: 3px solid #FFFFFF;
+		border: 3px solid #ffffff;
 		backdrop-filter: blur(4.5px);
 		border-radius: 32px;
 		padding: 2rem;
@@ -83,4 +83,3 @@ const AppStyled = styled.div`
 	}
 `
 export default App
-
