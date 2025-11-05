@@ -2,8 +2,23 @@ import React from "react"
 import styled from "styled-components"
 
 function HamburgerMenu({ isOpen, toggleMenu }) {
+	const handleKeyDown = (e) => {
+		if (e.key === "Enter" || e.key === " ") {
+			e.preventDefault()
+			toggleMenu()
+		}
+	}
+
 	return (
-		<HamburgerStyled onClick={toggleMenu} className={isOpen ? "open" : ""}>
+		<HamburgerStyled
+			isOpen={isOpen}
+			onClick={toggleMenu}
+			className={isOpen ? "open" : ""}
+			role="button"
+			aria-label={isOpen ? "Close menu" : "Open menu"}
+			aria-expanded={isOpen}
+			tabIndex={0}
+			onKeyDown={handleKeyDown}>
 			<span></span>
 			<span></span>
 			<span></span>

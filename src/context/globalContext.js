@@ -1,4 +1,5 @@
 import { useContext, createContext, useState, useEffect } from "react"
+import { useAuth } from "./authContext"
 import axios from "axios"
 
 const BASE_URL = "http://localhost:5000/api/v1/"
@@ -9,6 +10,17 @@ export const GlobalProvider = ({ children }) => {
 	const [incomes, setIncomes] = useState([])
 	const [expenses, setExpenses] = useState([])
 	const [error, setError] = useState(null)
+	const { user } = useAuth()
+
+	useEffect(() => {
+		// Set up axios auth header when user changes
+		const token = localStorage.getItem("token")
+		if (token) {
+			axios.defaults.headers.common["Authorization"] = `Bearer ${token}`
+		} else {
+			delete axios.defaults.headers.common["Authorization"]
+		}
+	}, [user])
 
 	// Income Functions
 	const addIncome = async (income) => {
@@ -91,9 +103,14 @@ export const GlobalProvider = ({ children }) => {
 
 	// Load data when component mounts
 	useEffect(() => {
-		getIncome()
-		getExpenses()
-	}, [])
+		if (typeof user !== "undefined" && user !== null) {
+			getIncome()
+			getExpenses()
+		} else {
+			setIncomes([])
+			setExpenses([])
+		}
+	}, [user])
 
 	return (
 		<GlobalContext.Provider

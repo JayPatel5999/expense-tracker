@@ -1,6 +1,7 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
 import App from "./App"
+import { AuthProvider } from "./context/authContext"
 import { GlobalStyle } from "./styles/globalStyles"
 import { GlobalProvider } from "./context/globalContext"
 
@@ -8,9 +9,11 @@ const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
 	<React.StrictMode>
 		<GlobalStyle />
-		<GlobalProvider>
-			<App />
-		</GlobalProvider>
+		<AuthProvider>
+			<GlobalProvider>
+				<App />
+			</GlobalProvider>
+		</AuthProvider>
 	</React.StrictMode>
 )
 

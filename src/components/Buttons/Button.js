@@ -32,6 +32,13 @@ const ButtonStyled = styled.button`
 		background: #42ad00 !important;
 		color: #fff !important;
 	}
+
+	/* Make buttons easier to tap on small screens */
+	@media (max-width: 480px) {
+		width: 100%;
+		justify-content: center;
+		padding: 0.9rem 1rem !important;
+	}
 `
 
 export default Button

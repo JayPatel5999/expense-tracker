@@ -85,6 +85,16 @@ const ExpensesStyled = styled.div`
 			flex: 1;
 		}
 	}
+
+	@media (max-width: 768px) {
+		.expense-content {
+			flex-direction: column;
+			gap: 1rem;
+		}
+		.form-container {
+			width: 100%;
+		}
+	}
 `
 
 export default Expenses

@@ -2,7 +2,14 @@ import React from "react"
 import styled from "styled-components"
 
 function Overlay({ isOpen, toggleMenu }) {
-	return <OverlayStyled className={isOpen ? "open" : ""} onClick={toggleMenu} />
+	return (
+		<OverlayStyled
+			className={isOpen ? "open" : ""}
+			onClick={toggleMenu}
+			role="presentation"
+			aria-hidden={!isOpen}
+		/>
+	)
 }
 
 const OverlayStyled = styled.div`
