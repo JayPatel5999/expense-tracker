@@ -10,6 +10,7 @@
     "axios": "^1.13.2",
     "chart.js": "^4.4.8",
     "expense-tracker": "file:",
+    "focus-trap-react": "^11.0.4",
     "formik": "^2.4.6",
     "moment": "^2.30.1",
     "react": "^19.0.0",
